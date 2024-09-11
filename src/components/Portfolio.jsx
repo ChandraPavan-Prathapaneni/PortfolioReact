@@ -47,19 +47,19 @@ const Portfolio = () => {
           <p className="py-6">Check out some of my work right here</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8 px-4 sm:px-12">
           {portfolios.map(({ id, src }) => (
             <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
               <img
                 src={src}
                 alt=""
-                className="rounded-md duration-200 hover:scale-105"
+                className="rounded-md duration-200 hover:scale-105 w-full"
               />
               <div className="flex items-center justify-center">
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                <button className="w-1/2 px-4 py-2 m-2 sm:px-6 sm:py-3 sm:m-4 duration-200 hover:scale-105 text-sm sm:text-base">
                   Demo
                 </button>
-                <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">
+                <button className="w-1/2 px-4 py-2 m-2 sm:px-6 sm:py-3 sm:m-4 duration-200 hover:scale-105 text-sm sm:text-base">
                   Code
                 </button>
               </div>

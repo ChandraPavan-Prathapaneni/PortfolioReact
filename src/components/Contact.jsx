@@ -4,9 +4,9 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white"
+      className="w-full min-h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white py-16"
     >
-      <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
+      <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
             Contact
@@ -14,11 +14,11 @@ const Contact = () => {
           <p className="py-6">Submit the form below to get in touch with me</p>
         </div>
 
-        <div className=" flex justify-center items-center">
+        <div className="flex justify-center items-center">
           <form
             action="https://getform.io/f/avrenoga"
             method="POST"
-            className=" flex flex-col w-full md:w-1/2"
+            className="flex flex-col w-full md:w-1/2"
           >
             <input
               type="text"
@@ -35,7 +35,7 @@ const Contact = () => {
             <textarea
               name="message"
               placeholder="Enter your message"
-              rows="10"
+              rows="6"
               className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
             ></textarea>
 
