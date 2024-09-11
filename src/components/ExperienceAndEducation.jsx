@@ -88,7 +88,7 @@ const ExperienceAndEducation = () => {
   return (
     <section
       id="experience-education"
-      className="bg-gradient-to-b from-gray-700 via-gray-900 to-black text-white py-16"
+      className="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 text-white py-16"
     >
       <div className="max-w-screen-lg mx-auto p-4">
         <div className="text-center mb-8">
@@ -132,8 +132,8 @@ const ExperienceAndEducation = () => {
             </button>
           )}
 
-          <div className="flex overflow-hidden space-x-4">
-            <div className="flex-none w-[500px]">
+          <div className="flex overflow-hidden">
+            <div className="flex-none w-[80vw] sm:w-[400px] md:w-[500px]">
               {items.length > 0 && (
                 <div className="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
                   <div className="flex items-center mb-4">
