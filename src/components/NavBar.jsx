@@ -29,9 +29,9 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed z-50">
+    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed top-0 z-50">
       <div>
-        <h1 className="text-5xl font-signature ml-2">Pavan</h1>
+        <h1 className="text-4xl sm:text-5xl font-signature ml-2">Pavan</h1>
       </div>
 
       <ul className="hidden md:flex">
@@ -40,7 +40,7 @@ const NavBar = () => {
             key={id}
             className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200"
           >
-            <Link to={link} smooth duration={500}>
+            <Link to={link} smooth duration={500} offset={-80}>
               {link}
             </Link>
           </li>
@@ -66,6 +66,7 @@ const NavBar = () => {
                 to={link}
                 smooth
                 duration={500}
+                offset={-80}
               >
                 {link}
               </Link>
