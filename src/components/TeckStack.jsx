@@ -91,7 +91,7 @@ const TechStack = () => {
 
   return (
     <div
-      name="techstack"
+      name="tech-stack"
       className="bg-gradient-to-b from-gray-800 to-black w-full py-16"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">

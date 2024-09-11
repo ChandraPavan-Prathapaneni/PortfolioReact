@@ -87,7 +87,7 @@ const ExperienceAndEducation = () => {
 
   return (
     <section
-      id="experience-education"
+      id="my-journey"
       className="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 text-white py-16"
     >
       <div className="max-w-screen-lg mx-auto p-4">

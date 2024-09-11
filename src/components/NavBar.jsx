@@ -8,11 +8,10 @@ const NavBar = () => {
   const links = [
     { id: 1, link: "home" },
     { id: 2, link: "about" },
-    { id: 3, link: "experience" }, // Links to the experience subsection
-    { id: 4, link: "education" }, // Links to the education subsection
-    { id: 5, link: "projects" },
-    { id: 6, link: "techstack" },
-    { id: 7, link: "contact" },
+    { id: 3, link: "my-journey" },
+    { id: 4, link: "projects" },
+    { id: 5, link: "tech-stack" },
+    { id: 6, link: "contact" },
   ];
 
   return (
