@@ -5,18 +5,15 @@ import css from "../assets/css.png";
 import javascript from "../assets/javascript.png";
 import reactImage from "../assets/react.png";
 import nextjs from "../assets/nextjs.png";
-import graphql from "../assets/graphql.png";
 import github from "../assets/github.png";
 import tailwind from "../assets/tailwind.png";
 import python from "../assets/python.png";
 import figma from "../assets/figma.png";
 import aws from "../assets/aws.png";
 import azure from "../assets/azure.png";
-import express from "../assets/express.png";
-import VsCode from "../assets/Vscode.png";
 import nodejs from "../assets/nodejs.png";
 
-const Experience = () => {
+const TechStack = () => {
   const techs = [
     {
       id: 1,
@@ -56,69 +53,51 @@ const Experience = () => {
     },
     {
       id: 7,
-      src: graphql,
-      title: "GraphQL",
-      style: "shadow-pink-400",
-    },
-    {
-      id: 8,
       src: github,
       title: "GitHub",
       style: "shadow-gray-400",
     },
     {
-      id: 9,
+      id: 8,
       src: python,
       title: "Python",
       style: "shadow-blue-400",
     },
     {
-      id: 10,
+      id: 9,
       src: figma,
       title: "Figma",
       style: "shadow-teal-400",
     },
     {
-      id: 11,
+      id: 10,
       src: aws,
       title: "Amazon Web Services",
-      style: "shadow-orange-400",
+      style: "pt-8 shadow-orange-400",
     },
     {
-      id: 12,
+      id: 11,
       src: azure,
       title: "Azure",
       style: "shadow-cyan-400",
     },
     {
-      id: 13,
+      id: 12,
       src: nodejs,
       title: "Node JS",
       style: "shadow-green-400",
-    },
-    {
-      id: 14,
-      src: VsCode,
-      title: "VS Code",
-      style: "shadow-blue-300",
-    },
-    {
-      id: 15,
-      src: express,
-      title: "Express",
-      style: "shadow-gray-300",
     },
   ];
 
   return (
     <div
-      name="experience"
+      name="techstack"
       className="bg-gradient-to-b from-gray-800 to-black w-full py-16"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
         <div>
           <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
-            Experience
+            Tech Stack
           </p>
           <p className="py-6">These are the technologies I've worked with</p>
         </div>
@@ -139,4 +118,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default TechStack;

@@ -1,10 +1,11 @@
 import About from "./components/About";
 import Contact from "./components/Contact";
-import Experience from "./components/Experience";
+import ExperienceAndEducation from "./components/ExperienceAndEducation.jsx";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
-import Portfolio from "./components/Portfolio";
+import Projects from "./components/Projects.jsx";
 import SocialLinks from "./components/SocialLinks";
+import TechStack from "./components/TeckStack";
 
 function App() {
   return (
@@ -12,10 +13,10 @@ function App() {
       <NavBar />
       <Home />
       <About />
-      <Portfolio />
-      <Experience />
+      <ExperienceAndEducation/>
+      <Projects />
+      <TechStack />
       <Contact />
-
       <SocialLinks />
     </div>
   );

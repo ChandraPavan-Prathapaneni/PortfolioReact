@@ -6,30 +6,17 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
 
   const links = [
-    {
-      id: 1,
-      link: "home",
-    },
-    {
-      id: 2,
-      link: "about",
-    },
-    {
-      id: 3,
-      link: "portfolio",
-    },
-    {
-      id: 4,
-      link: "experience",
-    },
-    {
-      id: 5,
-      link: "contact",
-    },
+    { id: 1, link: "home" },
+    { id: 2, link: "about" },
+    { id: 3, link: "experience" }, // Links to the experience subsection
+    { id: 4, link: "education" }, // Links to the education subsection
+    { id: 5, link: "projects" },
+    { id: 6, link: "techstack" },
+    { id: 7, link: "contact" },
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed top-0 z-50">
+    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-gradient-to-r from-black to-gray-900 via-gray-950 fixed top-0 z-50">
       <div>
         <h1 className="text-4xl sm:text-5xl font-signature ml-2">Pavan</h1>
       </div>
