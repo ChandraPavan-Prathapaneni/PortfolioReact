@@ -12,6 +12,8 @@ import figma from "../assets/figma.png";
 import aws from "../assets/aws.png";
 import azure from "../assets/azure.png";
 import nodejs from "../assets/nodejs.png";
+import git from "../assets/Git.png";
+import java from "../assets/Java.png";
 
 const TechStack = () => {
   const techs = [
@@ -59,9 +61,9 @@ const TechStack = () => {
     },
     {
       id: 8,
-      src: python,
-      title: "Python",
-      style: "shadow-blue-400",
+      src: git,
+      title: "Git",
+      style: "shadow-orange-400",
     },
     {
       id: 9,
@@ -86,6 +88,18 @@ const TechStack = () => {
       src: nodejs,
       title: "Node JS",
       style: "shadow-green-400",
+    },
+    {
+      id: 13,
+      src: python,
+      title: "Python",
+      style: "shadow-blue-400",
+    },
+    {
+      id: 14,
+      src: java,
+      title: "Java",
+      style: "shadow-red-400",
     },
   ];
 
