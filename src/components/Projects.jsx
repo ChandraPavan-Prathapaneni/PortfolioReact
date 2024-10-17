@@ -1,5 +1,5 @@
 import React from "react";
-import Tourista from "../assets/portfolio/arrayDestruct.jpg";
+import Tourista from "../assets/portfolio/Tourista.png";
 import MovieApi from "../assets/portfolio/reactParallax.jpg";
 
 const Projects = () => {
@@ -8,13 +8,13 @@ const Projects = () => {
       id: 1,
       src: Tourista,
       code: "https://github.com/ChandraPavan-Prathapaneni/Tourista",
-      demo: "https://your-demo-link-here.com", // Add demo links if available
+      demo: "https://chandrapavan-prathapaneni.github.io/Tourista/#tours", // Add demo links if available
     },
     {
       id: 2,
       src: MovieApi,
-      code: "https://github.com",
-      demo: "https://your-demo-link-here.com", // Add demo links if available
+      code: "https://github.com/ChandraPavan-Prathapaneni/React-Movies-App/tree/main",
+      demo: "https://github.com/ChandraPavan-Prathapaneni/movies", // Add demo links if available
     },
   ];
 
