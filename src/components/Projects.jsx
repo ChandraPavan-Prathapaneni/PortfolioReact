@@ -1,6 +1,6 @@
 import React from "react";
 import Tourista from "../assets/portfolio/Tourista.png";
-import MovieApi from "../assets/portfolio/reactParallax.jpg";
+import MovieApi from "../assets/portfolio/Movie.png";
 
 const Projects = () => {
   const portfolios = [
