@@ -2,49 +2,52 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div
-      name="contact"
-      className="w-full min-h-screen bg-gradient-to-b from-black to-gray-800 p-4 text-white py-16"
-    >
-      <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto">
-        <div className="text-center mb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Contact Me
-          </p>
+    <section className="min-h-screen flex flex-col justify-center items-center bg-gray-800 py-16">
+      <h2 className="text-4xl font-semibold text-white mb-8">Contact Me</h2>
+
+      <form
+        action="https://script.google.com/macros/s/AKfycbznMjG8kda-6vCtNd7WYuLFRWc4baB7bLwL6KITF25bpB8bPylRDD1y8LxkkjJ2Z1AF/exec"
+        method="POST"
+        className="w-full max-w-lg bg-gray-900 p-8 rounded-lg shadow-lg"
+      >
+        <div className="mb-4">
+          <input
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            className="w-full p-4 bg-transparent border-2 border-cyan-500 rounded-md text-white focus:outline-none"
+            required
+          />
         </div>
 
-        <div className="flex justify-center items-center">
-          <form
-            action="https://getform.io/f/avrenoga"
-            method="POST"
-            className="flex flex-col w-full md:w-1/2"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-              className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            />
-            <input
-              type="text"
-              name="email"
-              placeholder="Enter your email"
-              className="my-4 p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            />
-            <textarea
-              name="message"
-              placeholder="Enter your message"
-              rows="6"
-              className="p-2 bg-transparent border-2 rounded-md text-white focus:outline-none"
-            ></textarea>
-
-            <button className="text-white bg-gradient-to-b from-cyan-500 to-blue-500 px-6 py-3 my-8 mx-auto flex items-center rounded-md hover:scale-110 duration-300">
-              Let's talk
-            </button>
-          </form>
+        <div className="mb-4">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            className="w-full p-4 bg-transparent border-2 border-cyan-500 rounded-md text-white focus:outline-none"
+            required
+          />
         </div>
-      </div>
-    </div>
+
+        <div className="mb-6">
+          <textarea
+            name="message"
+            placeholder="Enter your message"
+            rows="6"
+            className="w-full p-4 bg-transparent border-2 border-cyan-500 rounded-md text-white focus:outline-none"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full py-3 bg-gradient-to-b from-cyan-500 to-blue-500 text-white rounded-md hover:scale-110 duration-300"
+        >
+          Let's talk
+        </button>
+      </form>
+    </section>
   );
 };
 
