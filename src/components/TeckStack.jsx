@@ -14,6 +14,7 @@ import azure from "../assets/azure.png";
 import nodejs from "../assets/nodejs.png";
 import git from "../assets/Git.png";
 import java from "../assets/Java.png";
+import gcp from "../assets/gcp.png";
 
 const TechStack = () => {
   const techs = [
@@ -21,55 +22,55 @@ const TechStack = () => {
       id: 1,
       src: html,
       title: "HTML",
-      style: "shadow-orange-500",
+      style: "pt-8 shadow-orange-500",
     },
     {
       id: 2,
       src: css,
       title: "CSS",
-      style: "shadow-blue-500",
+      style: "pt-8 shadow-blue-500",
     },
     {
       id: 3,
       src: javascript,
       title: "JavaScript",
-      style: "shadow-yellow-500",
+      style: "pt-8 shadow-yellow-500",
     },
     {
       id: 4,
       src: reactImage,
       title: "React",
-      style: "shadow-blue-600",
+      style: "pt-8 shadow-blue-600",
     },
     {
       id: 5,
       src: tailwind,
       title: "Tailwind",
-      style: "shadow-sky-400",
+      style: "pt-8 shadow-sky-400",
     },
     {
       id: 6,
       src: nextjs,
       title: "Next JS",
-      style: "shadow-white",
+      style: "pt-8 shadow-white",
     },
     {
       id: 7,
       src: github,
       title: "GitHub",
-      style: "shadow-gray-400",
+      style: "pt-8 shadow-gray-400",
     },
     {
       id: 8,
       src: git,
       title: "Git",
-      style: "shadow-orange-400",
+      style: "pt-8 shadow-orange-400",
     },
     {
       id: 9,
       src: figma,
       title: "Figma",
-      style: "shadow-teal-400",
+      style: "pt-8 shadow-teal-400",
     },
     {
       id: 10,
@@ -81,25 +82,31 @@ const TechStack = () => {
       id: 11,
       src: azure,
       title: "Azure",
-      style: "shadow-cyan-400",
+      style: "pt-8 shadow-cyan-400",
     },
     {
       id: 12,
-      src: nodejs,
-      title: "Node JS",
-      style: "shadow-green-400",
+      src: gcp,
+      title: "GCP",
+      style: "pt-8 shadow-blue-400",
     },
     {
       id: 13,
-      src: python,
-      title: "Python",
-      style: "shadow-blue-400",
+      src: nodejs,
+      title: "Node JS",
+      style: "pt-8 shadow-green-400",
     },
     {
       id: 14,
+      src: python,
+      title: "Python",
+      style: "pt-8 shadow-blue-400",
+    },
+    {
+      id: 15,
       src: java,
       title: "Java",
-      style: "shadow-red-400",
+      style: "pt-8 shadow-red-400",
     },
   ];
 
@@ -109,11 +116,10 @@ const TechStack = () => {
       className="bg-gradient-to-b from-gray-800 to-black w-full py-16"
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
-        <div>
-          <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
+        <div className="text-center mb-8">
+          <p className="text-5xl font-bold inline border-b-4 border-gray-500">
             Tech Stack
           </p>
-          <p className="py-6">These are the technologies I've worked with</p>
         </div>
 
         <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-4 sm:px-0">

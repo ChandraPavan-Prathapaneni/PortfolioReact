@@ -7,8 +7,8 @@ const About = () => {
       className="w-full bg-gradient-to-b from-gray-800 to-gray-700 text-white py-16"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full">
-        <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+        <div className="text-center mb-8">
+          <p className="text-5xl font-bold inline border-b-4 border-gray-500">
             About
           </p>
         </div>
@@ -23,7 +23,7 @@ const About = () => {
             significant revenue increases through innovative application
             development.
           </p>
-
+          <br></br>
           <p>
             I thrive in Agile environments, collaborating with cross-functional
             teams to deliver high-quality software solutions. My skills extend

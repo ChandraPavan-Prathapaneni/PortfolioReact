@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { MdWork, MdSchool } from "react-icons/md";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 const ExperienceAndEducation = () => {
   const [showExperience, setShowExperience] = useState(true);
-  const [showEducation, setShowEducation] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const cardRef = useRef(null);
+  const [maxHeight, setMaxHeight] = useState(0);
 
   const experiences = [
     {
@@ -54,36 +55,48 @@ const ExperienceAndEducation = () => {
       location: "Richardson, Texas",
       date: "2023 - 2024",
       description: [
-        "Graduating in Major of Information Systems",
+        "Graduating in Major of Information Systems.",
         "Worked on projects in Web Development, UI App Design, Machine Learning, and Database Design.",
       ],
     },
   ];
 
+  const items = showExperience ? experiences : education;
+  const isFirstItem = currentIndex === 0;
+  const isLastItem = currentIndex === items.length - 1;
+
+  useEffect(() => {
+    // Calculate and set max height for cards dynamically
+    if (cardRef.current) {
+      const currentCardHeight = cardRef.current.scrollHeight;
+      setMaxHeight((prevMaxHeight) =>
+        Math.max(prevMaxHeight, currentCardHeight)
+      );
+    }
+  }, [currentIndex, showExperience]);
+
+  const handlePrev = () => {
+    if (!isFirstItem) {
+      setCurrentIndex((prev) => prev - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (!isLastItem) {
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
+
+  // Toggling between Experience and Education
   const handleExperience = () => {
-    setShowEducation(false);
     setShowExperience(true);
-    setCurrentIndex(0);
+    setCurrentIndex(0); // Reset index when switching sections
   };
 
   const handleEducation = () => {
     setShowExperience(false);
-    setShowEducation(true);
-    setCurrentIndex(0);
+    setCurrentIndex(0); // Reset index when switching sections
   };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(prev - 1, 0));
-  };
-
-  const handleNext = () => {
-    const items = showExperience ? experiences : education;
-    setCurrentIndex((prev) => Math.min(prev + 1, items.length - 1));
-  };
-
-  const items = showExperience ? experiences : education;
-  const isFirstItem = currentIndex === 0;
-  const isLastItem = currentIndex === items.length - 1;
 
   return (
     <section
@@ -92,89 +105,86 @@ const ExperienceAndEducation = () => {
     >
       <div className="max-w-screen-lg mx-auto p-4">
         <div className="text-center mb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+          <p className="text-5xl font-bold inline border-b-4 border-gray-500">
             My Journey
           </p>
         </div>
 
         <div className="flex justify-center mb-8">
-          <ul className="flex gap-8">
-            <li
-              onClick={handleExperience}
-              className={`${
-                showExperience
-                  ? "border-b-2 border-textGreen text-textGreen"
-                  : "border-b-2 border-transparent text-textDark"
-              } py-3 px-6 text-sm cursor-pointer font-medium`}
-            >
-              Experience
-            </li>
-            <li
-              onClick={handleEducation}
-              className={`${
-                showEducation
-                  ? "border-b-2 border-textGreen text-textGreen"
-                  : "border-b-2 border-transparent text-textDark"
-              } py-3 px-6 text-sm cursor-pointer font-medium`}
-            >
-              Education
-            </li>
-          </ul>
+          <button
+            onClick={handleExperience}
+            className={`px-4 py-2 text-sm font-medium rounded-l-lg ${
+              showExperience
+                ? "bg-gray-300 text-gray-700 border border-gray-300"
+                : "bg-gray-900 text-white border border-gray-700"
+            }`}
+          >
+            Experience
+          </button>
+          <button
+            onClick={handleEducation}
+            className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
+              !showExperience
+                ? "bg-gray-300 text-gray-700 border border-gray-300"
+                : "bg-gray-900 text-white border border-gray-700"
+            }`}
+          >
+            Education
+          </button>
         </div>
 
-        <div className="relative flex items-center justify-center">
-          {!isFirstItem && (
-            <button
-              onClick={handlePrev}
-              className="absolute left-0 p-2 bg-gray-700 text-white rounded-full hover:bg-gray-600"
-            >
-              <FaArrowLeft />
-            </button>
-          )}
-
-          <div className="flex overflow-hidden">
-            <div className="flex-none w-[80vw] sm:w-[400px] md:w-[500px]">
-              {items.length > 0 && (
-                <div className="bg-gray-800 text-white p-4 rounded-lg shadow-lg">
-                  <div className="flex items-center mb-4">
-                    {showExperience ? (
-                      <MdWork className="text-white text-4xl" />
-                    ) : (
-                      <MdSchool className="text-white text-4xl" />
-                    )}
-                    <div className="ml-4">
-                      <h3 className="text-xl font-semibold">
-                        {items[currentIndex].title}
-                      </h3>
-                      <h4 className="text-lg">
-                        {showExperience
-                          ? items[currentIndex].company
-                          : items[currentIndex].school}
-                      </h4>
-                      <h5 className="text-gray-600">
-                        {items[currentIndex].location}
-                      </h5>
-                      <p className="text-sm">
-                        {items[currentIndex].description.join(", ")}
-                      </p>
-                      <p className="text-xs text-gray-500 mt-2">
-                        {items[currentIndex].date}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+        <div className="relative flex justify-center items-center">
+          <div
+            ref={cardRef}
+            className="w-[80vw] sm:w-[400px] md:w-[500px] bg-gray-800 text-white p-6 rounded-lg shadow-lg overflow-hidden transition-all duration-500"
+            style={{ height: `${maxHeight}px` }}
+          >
+            <div className="flex items-center mb-4">
+              {showExperience ? (
+                <MdWork className="text-white text-4xl" />
+              ) : (
+                <MdSchool className="text-white text-4xl" />
               )}
+              <div className="ml-4">
+                <h3 className="text-xl font-semibold">
+                  {items[currentIndex].title}
+                </h3>
+                <h4 className="text-lg">
+                  {showExperience
+                    ? items[currentIndex].company
+                    : items[currentIndex].school}
+                </h4>
+                <h5 className="text-gray-400">
+                  {items[currentIndex].location}
+                </h5>
+                <p className="text-sm mt-2">
+                  {items[currentIndex].description.join(", ")}
+                </p>
+                <p className="text-xs text-gray-500 mt-2">
+                  {items[currentIndex].date}
+                </p>
+              </div>
             </div>
           </div>
 
-          {!isLastItem && (
-            <button
-              onClick={handleNext}
-              className="absolute right-0 p-2 bg-gray-700 text-white rounded-full hover:bg-gray-600"
-            >
-              <FaArrowRight />
-            </button>
-          )}
+          <div className="absolute right-8 flex flex-col gap-2">
+            {!isFirstItem && (
+              <button
+                onClick={handlePrev}
+                className="p-12 bg-gray-700 rounded-md hover:bg-gray-600"
+              >
+                <FaArrowUp />
+              </button>
+            )}
+            {!isLastItem && (
+              <button
+                onClick={handleNext}
+                className="p-12 bg-gray-700 rounded-md hover:bg-gray-600"
+              >
+                <FaArrowDown />
+              </button>
+            )}
+          </div>
         </div>
       </div>
     </section>
