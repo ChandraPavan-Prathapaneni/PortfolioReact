@@ -66,7 +66,6 @@ const ExperienceAndEducation = () => {
   const isLastItem = currentIndex === items.length - 1;
 
   useEffect(() => {
-    // Calculate and set max height for cards dynamically
     if (cardRef.current) {
       const currentCardHeight = cardRef.current.scrollHeight;
       setMaxHeight((prevMaxHeight) =>
@@ -87,15 +86,14 @@ const ExperienceAndEducation = () => {
     }
   };
 
-  // Toggling between Experience and Education
   const handleExperience = () => {
     setShowExperience(true);
-    setCurrentIndex(0); // Reset index when switching sections
+    setCurrentIndex(0);
   };
 
   const handleEducation = () => {
     setShowExperience(false);
-    setCurrentIndex(0); // Reset index when switching sections
+    setCurrentIndex(0);
   };
 
   return (
@@ -133,7 +131,8 @@ const ExperienceAndEducation = () => {
           </button>
         </div>
 
-        <div className="relative flex justify-center items-center">
+        <div className="relative flex flex-col items-center">
+          {/* Card */}
           <div
             ref={cardRef}
             className="w-[80vw] sm:w-[400px] md:w-[500px] bg-gray-800 text-white p-6 rounded-lg shadow-lg overflow-hidden transition-all duration-500"
@@ -167,11 +166,12 @@ const ExperienceAndEducation = () => {
             </div>
           </div>
 
-          <div className="absolute right-8 flex flex-col gap-2">
+          {/* Navigation Buttons */}
+          <div className="flex justify-between mt-4 space-x-4">
             {!isFirstItem && (
               <button
                 onClick={handlePrev}
-                className="p-12 bg-gray-700 rounded-md hover:bg-gray-600"
+                className="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-600"
               >
                 <FaArrowUp />
               </button>
@@ -179,7 +179,7 @@ const ExperienceAndEducation = () => {
             {!isLastItem && (
               <button
                 onClick={handleNext}
-                className="p-12 bg-gray-700 rounded-md hover:bg-gray-600"
+                className="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-600"
               >
                 <FaArrowDown />
               </button>
