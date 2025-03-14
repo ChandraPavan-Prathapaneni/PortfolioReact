@@ -13,7 +13,7 @@ const ExperienceAndEducation = () => {
       title: "Software Engineer",
       company: "Capgemini",
       location: "Bangalore, India",
-      date: "August 2021 - December 2022",
+      date: "December 2020 - December 2022",
       description: [
         "Designed and developed scalable backend systems using Java, reducing processing time by 54 seconds.",
         "Built responsive websites with React.js, improving loading time and UX.",
@@ -26,7 +26,7 @@ const ExperienceAndEducation = () => {
       title: "Associate Software Engineer",
       company: "CGI",
       location: "Bangalore, India",
-      date: "August 2019 - November 2020",
+      date: "January 2019 - November 2020",
       description: [
         "Developed multiple apps using Python for a Canadian telecom, significantly enhancing their operations and services, while gaining $20 Million Revenue.",
         "Orchestrated the seamless migration of legacy databases to modern MS SQL Server, ensuring data integrity and uninterrupted functionality.",
