@@ -15,7 +15,7 @@ import nodejs from "../assets/nodejs.png";
 import git from "../assets/Git.png";
 import java from "../assets/Java.png";
 import gcp from "../assets/gcp.png";
-import springboot from "../assets/Springboot.png";
+import springboot from "../assets/springboot.png";
 
 const TechStack = () => {
   const techs = [
@@ -23,108 +23,98 @@ const TechStack = () => {
       id: 1,
       src: html,
       title: "HTML",
-      style: "pt-8 shadow-orange-500",
+      style: "shadow-orange-300 bg-transparent",
     },
-    {
-      id: 2,
-      src: css,
-      title: "CSS",
-      style: "pt-8 shadow-blue-500",
-    },
+    { id: 2, src: css, title: "CSS", style: "shadow-blue-300 bg-transparent" },
     {
       id: 3,
       src: javascript,
       title: "JavaScript",
-      style: "pt-8 shadow-yellow-500",
+      style: "shadow-yellow-300 bg-transparent",
     },
     {
       id: 4,
       src: reactImage,
       title: "React",
-      style: "pt-8 shadow-blue-600",
+      style: "shadow-blue-400 bg-transparent",
     },
     {
       id: 5,
       src: tailwind,
       title: "Tailwind",
-      style: "pt-8 shadow-sky-400",
+      style: "shadow-sky-300 bg-transparent",
     },
     {
       id: 6,
       src: nextjs,
       title: "Next JS",
-      style: "pt-8 shadow-white",
+      style: "shadow-gray-300 bg-transparent",
     },
     {
       id: 7,
       src: github,
       title: "GitHub",
-      style: "pt-8 shadow-gray-400",
+      style: "shadow-gray-400 bg-transparent",
     },
     {
       id: 8,
       src: git,
       title: "Git",
-      style: "pt-8 shadow-orange-400",
+      style: "shadow-orange-300 bg-transparent",
     },
     {
       id: 9,
       src: figma,
       title: "Figma",
-      style: "pt-8 shadow-teal-400",
+      style: "shadow-teal-300 bg-transparent",
     },
     {
       id: 10,
       src: aws,
       title: "Amazon Web Services",
-      style: "pt-8 shadow-orange-400",
+      style: "shadow-yellow-300 bg-transparent",
     },
     {
       id: 11,
       src: azure,
       title: "Azure",
-      style: "pt-8 shadow-cyan-400",
+      style: "shadow-cyan-300 bg-transparent",
     },
-    {
-      id: 12,
-      src: gcp,
-      title: "GCP",
-      style: "pt-8 shadow-blue-400",
-    },
+    { id: 12, src: gcp, title: "GCP", style: "shadow-blue-300 bg-transparent" },
     {
       id: 13,
       src: nodejs,
       title: "Node JS",
-      style: "pt-8 shadow-green-400",
+      style: "shadow-green-300 bg-transparent",
     },
     {
       id: 14,
       src: python,
       title: "Python",
-      style: "pt-8 shadow-blue-400",
+      style: "shadow-blue-300 bg-transparent",
     },
     {
       id: 15,
       src: java,
       title: "Java",
-      style: "pt-8 shadow-red-400",
+      style: "shadow-red-300 bg-transparent",
     },
     {
       id: 16,
       src: springboot,
       title: "Spring Boot",
-      style: "pt-8 shadow-green-400",
+      style: "shadow-green-300 bg-transparent",
     },
   ];
 
   return (
     <div
-      name="Tech stack"
-      className="bg-gradient-to-b from-gray-800 to-black w-full py-16"
+      name="tech-stack"
+      className="bg-gradient-to-b from-[#FFDAB9] via-peach-200   to-peach-300 pt-20"
     >
-      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white">
+      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-gray-800">
         <div className="text-center mb-8">
-          <p className="text-5xl font-bold inline border-b-4 border-gray-500">
+          <p className="text-5xl font-bold inline border-b-4 border-peach-300">
             Tech Stack
           </p>
         </div>
@@ -133,10 +123,10 @@ const TechStack = () => {
           {techs.map(({ id, src, title, style }) => (
             <div
               key={id}
-              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}
+              className={`shadow-md hover:scale-105 duration-500 py-6 rounded-xl bg-transparent ${style}`}
             >
-              <img src={src} alt="" className="w-20 mx-auto" />
-              <p className="mt-4">{title}</p>
+              <img src={src} alt={title} className="w-20 mx-auto" />
+              <p className="mt-4 text-sm font-semibold">{title}</p>
             </div>
           ))}
         </div>

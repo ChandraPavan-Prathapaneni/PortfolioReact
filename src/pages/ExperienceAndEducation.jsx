@@ -111,33 +111,33 @@ const ExperienceAndEducation = () => {
 
   return (
     <section
-      id="my-journey"
-      className="bg-gradient-to-b from-gray-700 via-gray-800 to-gray-900 text-white py-16"
+      id="career"
+      className="bg-gradient-to-b from-[#FFDAB9] via-peach-200 to-peach-300 text-gray-900 py-16"
     >
       <div className="max-w-screen-lg mx-auto p-4">
         <div className="text-center mb-8">
-          <p className="text-5xl font-bold inline border-b-4 border-gray-500">
-            My Journey
+          <p className="text-5xl font-bold inline border-b-4 border-orange-300">
+            My Career
           </p>
         </div>
 
         <div className="flex justify-center mb-8">
           <button
             onClick={handleExperience}
-            className={`px-4 py-2 text-sm font-medium rounded-l-lg ${
+            className={`px-6 py-3 text-sm font-medium rounded-l-lg ${
               showExperience
-                ? "bg-gray-300 text-gray-700 border border-gray-300"
-                : "bg-gray-900 text-white border border-gray-700"
+                ? "bg-gradient-to-r from-orange-400 to-orange-300 text-white border border-orange-300"
+                : "bg-orange-100 text-gray-800 border border-orange-300"
             }`}
           >
             Experience
           </button>
           <button
             onClick={handleEducation}
-            className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
+            className={`px-6 py-3 text-sm font-medium rounded-r-lg ${
               !showExperience
-                ? "bg-gray-300 text-gray-700 border border-gray-300"
-                : "bg-gray-900 text-white border border-gray-700"
+                ? "bg-gradient-to-r from-orange-400 to-orange-300 text-white border border-orange-300"
+                : "bg-orange-100 text-gray-800 border border-orange-300"
             }`}
           >
             Education
@@ -148,31 +148,37 @@ const ExperienceAndEducation = () => {
           {/* Card */}
           <div
             ref={cardRef}
-            className="w-[80vw] sm:w-[400px] md:w-[500px] bg-gray-800 text-white p-6 rounded-lg shadow-lg overflow-hidden transition-all duration-500"
+            className="w-[90vw] sm:w-[600px] md:w-[700px] lg:w-[800px] bg-gradient-to-r from-orange-100 to-orange-200 text-black p-8 rounded-lg shadow-lg overflow-hidden transition-all duration-500"
             style={{ height: `${maxHeight}px` }}
           >
-            <div className="flex items-center mb-4">
-              {showExperience ? (
-                <MdWork className="text-white text-4xl" />
-              ) : (
-                <MdSchool className="text-white text-4xl" />
-              )}
-              <div className="ml-4">
-                <h3 className="text-xl font-semibold">
+            <div className="flex items-start mb-4">
+              <div className="mr-6 mt-1">
+                {showExperience ? (
+                  <MdWork className="text-orange-500 text-4xl" />
+                ) : (
+                  <MdSchool className="text-orange-500 text-4xl" />
+                )}
+              </div>
+              <div className="flex-1">
+                <h3 className="text-2xl font-semibold text-gray-900">
                   {items[currentIndex].title}
                 </h3>
-                <h4 className="text-lg">
+                <h4 className="text-xl text-gray-800">
                   {showExperience
                     ? items[currentIndex].company
                     : items[currentIndex].school}
                 </h4>
-                <h5 className="text-gray-400">
+                <h5 className="text-gray-700 font-medium">
                   {items[currentIndex].location}
                 </h5>
-                <p className="text-sm mt-2">
-                  {items[currentIndex].description.join(", ")}
-                </p>
-                <p className="text-xs text-gray-500 mt-2">
+                <div className="mt-4 space-y-2">
+                  {items[currentIndex].description.map((point, idx) => (
+                    <p key={idx} className="text-sm text-gray-700">
+                      • {point}
+                    </p>
+                  ))}
+                </div>
+                <p className="text-sm text-orange-600 font-medium mt-4">
                   {items[currentIndex].date}
                 </p>
               </div>
@@ -180,11 +186,11 @@ const ExperienceAndEducation = () => {
           </div>
 
           {/* Navigation Buttons */}
-          <div className="flex justify-between mt-4 space-x-4">
+          <div className="flex justify-center mt-6 space-x-8">
             {!isFirstItem && (
               <button
                 onClick={handlePrev}
-                className="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-600"
+                className="p-3 bg-orange-400 text-white rounded-full hover:bg-orange-500 shadow-md"
               >
                 <FaArrowUp />
               </button>
@@ -192,7 +198,7 @@ const ExperienceAndEducation = () => {
             {!isLastItem && (
               <button
                 onClick={handleNext}
-                className="p-3 bg-gray-700 text-white rounded-full hover:bg-gray-600"
+                className="p-3 bg-orange-400 text-white rounded-full hover:bg-orange-500 shadow-md"
               >
                 <FaArrowDown />
               </button>
