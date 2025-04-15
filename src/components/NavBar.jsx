@@ -6,12 +6,12 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
 
   const links = [
-    { id: 1, link: "home" },
-    { id: 2, link: "about" },
-    { id: 3, link: "my-journey" },
-    { id: 4, link: "projects" },
-    { id: 5, link: "tech-stack" },
-    { id: 6, link: "contact" },
+    { id: 1, link: "Home" },
+    { id: 5, link: "Tech Stack" },
+    { id: 2, link: "About Me" },
+    { id: 3, link: "Career" },
+    { id: 4, link: "Project" },
+    { id: 6, link: "Contact" },
   ];
 
   return (
