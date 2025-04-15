@@ -87,23 +87,12 @@ const ExperienceAndEducation = () => {
     }
   }, [currentIndex, showExperience]);
 
-  const handlePrev = () => {
-    if (!isFirstItem) {
-      setCurrentIndex((prev) => prev - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (!isLastItem) {
-      setCurrentIndex((prev) => prev + 1);
-    }
-  };
-
+  const handlePrev = () => !isFirstItem && setCurrentIndex((prev) => prev - 1);
+  const handleNext = () => !isLastItem && setCurrentIndex((prev) => prev + 1);
   const handleExperience = () => {
     setShowExperience(true);
     setCurrentIndex(0);
   };
-
   const handleEducation = () => {
     setShowExperience(false);
     setCurrentIndex(0);
@@ -112,21 +101,15 @@ const ExperienceAndEducation = () => {
   return (
     <section
       id="career"
-      className="bg-gradient-to-b from-[#FFDAB9] via-peach-200 to-peach-300 text-gray-900 py-16"
+      className="bg-gradient-to-b from-[#FFDAB9] via-peach-200 to-peach-300 text-gray-900 pt-20"
     >
-      <div className="max-w-screen-lg mx-auto p-4">
-        <div className="text-center mb-8">
-          <p className="text-5xl font-bold inline border-b-4 border-orange-300">
-            My Career
-          </p>
-        </div>
-
-        <div className="flex justify-center mb-8">
+      <div className="max-w-screen-xl mx-auto px-6">
+        <div className="flex justify-center mb-8 py-1">
           <button
             onClick={handleExperience}
-            className={`px-6 py-3 text-sm font-medium rounded-l-lg ${
+            className={`px-6 py-2 text-sm font-medium rounded-l-lg transition-all duration-300 ${
               showExperience
-                ? "bg-gradient-to-r from-orange-400 to-orange-300 text-white border border-orange-300"
+                ? "bg-gradient-to-r from-orange-400 to-orange-300 text-white border border-orange-300 scale-105 shadow-md"
                 : "bg-orange-100 text-gray-800 border border-orange-300"
             }`}
           >
@@ -134,9 +117,9 @@ const ExperienceAndEducation = () => {
           </button>
           <button
             onClick={handleEducation}
-            className={`px-6 py-3 text-sm font-medium rounded-r-lg ${
+            className={`px-6 py-2 text-sm font-medium rounded-r-lg transition-all duration-300 ${
               !showExperience
-                ? "bg-gradient-to-r from-orange-400 to-orange-300 text-white border border-orange-300"
+                ? "bg-gradient-to-r from-orange-400 to-orange-300 text-white border border-orange-300 scale-105 shadow-md"
                 : "bg-orange-100 text-gray-800 border border-orange-300"
             }`}
           >
@@ -144,14 +127,52 @@ const ExperienceAndEducation = () => {
           </button>
         </div>
 
-        <div className="relative flex flex-col items-center">
-          {/* Card */}
+        {/* Navigation buttons above card - centered and closer together */}
+        <div className="flex justify-center mb-6">
+          <div className="inline-flex items-center space-x-4">
+            <button
+              aria-label="Previous item"
+              onClick={handlePrev}
+              disabled={isFirstItem}
+              className={`p-3 rounded-full shadow-md transition ${
+                isFirstItem
+                  ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-orange-400 hover:bg-orange-500 text-white"
+              }`}
+            >
+              <FaArrowUp />
+            </button>
+
+            <span className="text-sm font-medium text-gray-700">
+              {currentIndex + 1} / {items.length}
+            </span>
+
+            <button
+              aria-label="Next item"
+              onClick={handleNext}
+              disabled={isLastItem}
+              className={`p-3 rounded-full shadow-md transition ${
+                isLastItem
+                  ? "bg-gray-300 cursor-not-allowed"
+                  : "bg-orange-400 hover:bg-orange-500 text-white"
+              }`}
+            >
+              <FaArrowDown />
+            </button>
+          </div>
+        </div>
+
+        {/* Card */}
+        <div className="flex justify-center">
           <div
             ref={cardRef}
-            className="w-[90vw] sm:w-[600px] md:w-[700px] lg:w-[800px] bg-gradient-to-r from-orange-100 to-orange-200 text-black p-8 rounded-lg shadow-lg overflow-hidden transition-all duration-500"
-            style={{ height: `${maxHeight}px` }}
+            className="w-full max-w-[900px] bg-gradient-to-r from-orange-100 to-orange-200 text-black p-6 md:p-8 rounded-2xl shadow-xl transition-all duration-500 mx-4 mb-12"
+            style={{
+              minHeight: `${maxHeight}px`,
+              transition: "min-height 0.5s ease-in-out",
+            }}
           >
-            <div className="flex items-start mb-4">
+            <div className="flex items-start">
               <div className="mr-6 mt-1">
                 {showExperience ? (
                   <MdWork className="text-orange-500 text-4xl" />
@@ -160,7 +181,7 @@ const ExperienceAndEducation = () => {
                 )}
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl font-semibold text-gray-900">
+                <h3 className="text-3xl font-semibold text-gray-900">
                   {items[currentIndex].title}
                 </h3>
                 <h4 className="text-xl text-gray-800">
@@ -171,38 +192,16 @@ const ExperienceAndEducation = () => {
                 <h5 className="text-gray-700 font-medium">
                   {items[currentIndex].location}
                 </h5>
-                <div className="mt-4 space-y-2">
+                <ul className="mt-4 space-y-2 list-disc list-inside text-sm text-gray-700">
                   {items[currentIndex].description.map((point, idx) => (
-                    <p key={idx} className="text-sm text-gray-700">
-                      • {point}
-                    </p>
+                    <li key={idx}>{point}</li>
                   ))}
-                </div>
+                </ul>
                 <p className="text-sm text-orange-600 font-medium mt-4">
                   {items[currentIndex].date}
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Navigation Buttons */}
-          <div className="flex justify-center mt-6 space-x-8">
-            {!isFirstItem && (
-              <button
-                onClick={handlePrev}
-                className="p-3 bg-orange-400 text-white rounded-full hover:bg-orange-500 shadow-md"
-              >
-                <FaArrowUp />
-              </button>
-            )}
-            {!isLastItem && (
-              <button
-                onClick={handleNext}
-                className="p-3 bg-orange-400 text-white rounded-full hover:bg-orange-500 shadow-md"
-              >
-                <FaArrowDown />
-              </button>
-            )}
           </div>
         </div>
       </div>

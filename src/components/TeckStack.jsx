@@ -16,6 +16,8 @@ import git from "../assets/Git.png";
 import java from "../assets/Java.png";
 import gcp from "../assets/gcp.png";
 import springboot from "../assets/springboot.png";
+import hibernate from "../assets/hibernate.png";
+import restapi from "../assets/restapi.png";
 
 const TechStack = () => {
   const techs = [
@@ -104,6 +106,18 @@ const TechStack = () => {
       src: springboot,
       title: "Spring Boot",
       style: "shadow-green-300 bg-transparent",
+    },
+    {
+      id: 17,
+      src: restapi,
+      title: "Rest APIs",
+      style: "shadow-blue-300 bg-transparent",
+    },
+    {
+      id: 18,
+      src: hibernate,
+      title: "Hibernate",
+      style: "shadow-gray-800 bg-transparent",
     },
   ];
 
