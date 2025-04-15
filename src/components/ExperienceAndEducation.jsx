@@ -10,16 +10,30 @@ const ExperienceAndEducation = () => {
 
   const experiences = [
     {
+      title: "Full Stack Java Developer",
+      company: "Adverum Biotechnologies",
+      location: "Redwood, California",
+      date: "August 2023 - Present",
+      description: [
+        "Optimized database queries and implemented data caching strategies using Redis and MongoDB indexes, improving system performance by reducing query response times and enhancing scalability",
+        "All the functionality is implemented using Spring Boot and Hibernate ORM. Implemented Java EE components using Spring MVC, Spring IOC, Spring transactions and Spring security modules",
+        "Designed, documented and developed Micro Services using Java, Spring Boot, Spring, Hibernate, MySQL Workbench,Postman",
+        "Utilized Amazon Web Services (AWS EC2) to deploy Docker containers with both monolith and Micro-Services architecture",
+        "Implemented API Gateway using AWS API Gateway to expose microservices securely, manage traffic routing, and ensure scalability, reducing direct client-to-service communication and improving fault tolerance",
+      ],
+    },
+    {
       title: "Software Engineer",
       company: "Capgemini",
       location: "Bangalore, India",
       date: "December 2020 - December 2022",
       description: [
-        "Designed and developed scalable backend systems using Java, reducing processing time by 54 seconds.",
-        "Built responsive websites with React.js, improving loading time and UX.",
-        "Implemented a backend cleanup app using MS SQL Server, enhancing database efficiency by 50%.",
-        "Managed testing lifecycle and code reviews to maintain high code quality.",
-        "Collaborated in Agile environments and worked on legacy applications.",
+        "designed and developed RESTful API and services using best practices to interact within the microservices and with the frontend application. While writing application-level code to interact with APIs, Web Services using AJAX, JSON and XML.",
+        "Involved in developing user interface with HTML5, CSS3, JSON, AJAX, React JS, Typescript, Es6 and on server-side technology with Node JS.",
+        "Developed Data Access Object (DAO) for interacting with databases using Hibernate. Developed and consumed JSON based RESTful services using Spring MVC and Spring Boot",
+        "Mentored other team members regarding technology conflicts and upgradations requested by the client. Responsible for integrating the offshore team with the onsite team.",
+        "Developing the application using Struts and Hibernate based frameworks done with server-side validations using Struts validation framework REST APIs, including JSON data formats and written shell scripts in Linux to call routines.",
+        "Developing the Micro Services using Spring Boot that create, update, delete and get the assignment information from the backend.",
       ],
     },
     {
@@ -28,12 +42,11 @@ const ExperienceAndEducation = () => {
       location: "Bangalore, India",
       date: "January 2019 - November 2020",
       description: [
-        "Developed multiple apps using Python for a Canadian telecom, significantly enhancing their operations and services, while gaining $20 Million Revenue.",
-        "Orchestrated the seamless migration of legacy databases to modern MS SQL Server, ensuring data integrity and uninterrupted functionality.",
-        "Leveraged Azure for app deployment and management, optimizing performance and scalability.",
-        "Implemented data analytics to generate insights from user data, improving product features and user satisfaction.",
-        "Leveraged HTML, CSS, and JavaScript for front-end web development, also enhancing UI/UX design.",
-        "Employed Postman for API testing and debugging, ensuring robust and reliable backend services.",
+        "Implemented Restful web services API using HTTP and REST principles. GIT used for defects, changing tracking across the application. Wrote Junit test classes for the services and prepared documentation.",
+        "Used Spring JDBC for data retrieval from the database for various inquiries. Wrote complex SQL queries to retrieve data from the Oracle database.",
+        "Developed a web application utilizing Spring Boot that analyzes database tables to create various batch reports and visual models.",
+        "Wrote services to store and retrieve user data from MongoDB for the application on devices.",
+        "Implemented AWS high availability using AWS Elastic Load Balancing (ELB), which performs balancing across instances in multiple availability zones. Designed, implemented, and supported fully automated infrastructure.",
       ],
     },
   ];

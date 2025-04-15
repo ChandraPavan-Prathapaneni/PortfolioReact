@@ -1,6 +1,7 @@
 import React from "react";
 import Tourista from "../assets/portfolio/Tourista.png";
 import MovieApi from "../assets/portfolio/Movie.png";
+import mamas from "../assets/portfolio/mamas.png";
 
 const Projects = () => {
   const portfolios = [
@@ -14,7 +15,11 @@ const Projects = () => {
       id: 2,
       src: MovieApi,
       code: "https://github.com/ChandraPavan-Prathapaneni/React-Movies-App/tree/main",
-      link: "https://github.com/ChandraPavan-Prathapaneni/movies", // Add demo links if available
+    },
+    {
+      id: 3,
+      src: mamas,
+      code: "https://github.com/ChandraPavan-Prathapaneni/",
     },
   ];
 

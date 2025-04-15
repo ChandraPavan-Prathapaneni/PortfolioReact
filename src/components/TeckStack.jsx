@@ -15,6 +15,7 @@ import nodejs from "../assets/nodejs.png";
 import git from "../assets/Git.png";
 import java from "../assets/Java.png";
 import gcp from "../assets/gcp.png";
+import springboot from "../assets/Springboot.png";
 
 const TechStack = () => {
   const techs = [
@@ -107,6 +108,12 @@ const TechStack = () => {
       src: java,
       title: "Java",
       style: "pt-8 shadow-red-400",
+    },
+    {
+      id: 16,
+      src: springboot,
+      title: "Spring Boot",
+      style: "pt-8 shadow-green-400",
     },
   ];
 
