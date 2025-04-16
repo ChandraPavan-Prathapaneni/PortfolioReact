@@ -16,7 +16,7 @@ const Projects = () => {
     },
     {
       id: 3,
-      name: "Mama’s Kitchen",
+      name: "Manga Management System",
       code: "https://github.com/ChandraPavan-Prathapaneni/",
       link: "",
     },
